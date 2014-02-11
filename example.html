@@ -1,0 +1,55 @@
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>kvSmoothTransition, jQuery plugin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="author" content="Kalle H. Väravas <kalle.varavas@alta.ee>" />
+    <script charset="utf-8" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script charset="utf-8" src="jquery.kvSmoothTransition.js"></script>
+    <style>
+        html, body {margin: 0px; padding: 0px;}
+        body {padding: 20px;}
+        html, body, div, span, a {font: 12px normal Arial, Arial, Helvetica, sans-serif;}
+        code {display: block; padding: 10px; line-height: 1.4; font: 13px normal Courier New, Courier New, monospace; background: #E1F0FF; white-space: pre-wrap; white-space: -moz-pre-wrap !important; white-space: -pre-wrap; white-space: -o-pre-wrap;}
+        #container {width: 700px;}
+    
+        /* Examples: */
+        .global {padding: 5px; display: inline-block; cursor: pointer;}
+    
+        #example-1 {border: 2px dotted red;}
+            #example-1.hover{border: 2px solid black;}
+        
+        #example-2 {background: green;}
+            #example-2.hover{background: blue;}
+        
+        #example-3 {background: #ffb76b; background: -moz-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffb76b), color-stop(50%,#ffa73d), color-stop(51%,#ff7c00), color-stop(100%,#ff7f04)); background: -webkit-linear-gradient(top, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); background: -o-linear-gradient(top, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); background: -ms-linear-gradient(top, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); background: linear-gradient(top, #ffb76b 0%,#ffa73d 50%,#ff7c00 51%,#ff7f04 100%);}
+            #example-3.hover {background: #cb60b3; background: -moz-linear-gradient(top, #cb60b3 0%, #c146a1 50%, #a80077 51%, #db36a4 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cb60b3), color-stop(50%,#c146a1), color-stop(51%,#a80077), color-stop(100%,#db36a4)); background: -webkit-linear-gradient(top, #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%); background: -o-linear-gradient(top, #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%); background: -ms-linear-gradient(top, #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4',GradientType=0); background: linear-gradient(top, #cb60b3 0%,#c146a1 50%,#a80077 51%,#db36a4 100%);}
+        
+        #example-4 {background: silver; color: blue;}
+            #example-4.hover{color: green;}
+            
+        #example-5 {width: 248px; padding: 14px 0px 13px; background: url('example-5-sprite.png') top no-repeat; font-weight: bold; font-size: 18px; text-align: center; cursor: pointer;}
+            #example-5.hover {background: url('example-5-sprite.png') bottom no-repeat;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h3>Examples:</h3>
+        <div id="example-1" class="global">Example 1</div>
+        <br /><br />
+        <div id="example-2" class="global">Example 2</div>
+        <br /><br />
+        <div id="example-3" class="global">Example 3</div>
+        <br /><br />
+        <div id="example-4" class="global">Example 4</div>
+        <br /><br />
+        <div id="example-5">Example 5</div>
+    </div>
+    <script>
+        $('.global').kvSmoothTransition();
+        $('#example-5').kvSmoothTransition({showSpeed: 400, hideSpeed: 300});
+    </script>
+</body>
+</html>
