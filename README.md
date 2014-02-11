@@ -17,6 +17,8 @@ This plugin does not use the :hover pseudo-class, but just the .hover class of t
 
 `$('#test, .test').kvSmoothTransition();`
 
+**[Check the example fiddle](http://jsfiddle.net/hobobne/e87q8/12/)**
+
 This plugin has 3 options.
 
 - **showSpeed:** [number] - easein animation speed
