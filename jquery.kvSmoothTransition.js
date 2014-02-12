@@ -8,36 +8,34 @@
  */
 (function ($) {
     $.fn.kvSmoothTransition = function (options) {
+    	// These are the default options, that can be overwritten while triggering this function
         options = $.extend({
             showSpeed: 350,
             hideSpeed: 500,
             includeText: true
-		}, options);
-        
+	}, options);
+        // To make it work for every element with the same options, lets use return this.each
         return this.each(function (i, link) {
-            
-            var $this = $(this);
-            var this_position = $this.position();
+            var this_element = $(this);
+            var this_position = this_element.position();
             var elms = {};
-        
-            $this.append(elms[i] = $('<span />').filter(function (index) {
+            this_element.append(elms[i] = $('<span />').filter(function (index) {
                 if (options['includeText']) {
-                    $(this).html($this.html());
+                    $(this).html(this_element.html());
                 }
-                if ($this.attr('id')) {
-                    $(this).attr('id', $this.attr('id'));
+                if (this_element.attr('id')) {
+                    $(this).attr('id', this_element.attr('id'));
                 }
                 return true;
-            }).addClass($this.attr('class') + ' hover').css({
+            }).addClass(this_element.attr('class') + ' hover').css({
                 'display': 'block',
                 'opacity': 0,
                 'position': 'absolute',
                 'top': this_position.top,
                 'left': this_position.left,
-                'width': $this.width(),
-                'height': $this.height()
-            }))
-            .hover(function () {
+                'width': this_element.width(),
+                'height': this_element.height()
+            })).hover(function () {
                 $(elms[i]).stop().animate({
                     'opacity': 1
                 }, options['showSpeed']);
