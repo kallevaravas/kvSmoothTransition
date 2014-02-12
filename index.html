@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Kvsmoothtransition by kallevaravas</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Kvsmoothtransition</h1>
+        <p>kvSmoothTransition plugin is a simple fix for people, who want have smooth hover transitions for their designs and layouts. This plugin works for most possible element types and all possible css types.</p>
+
+        <p class="view"><a href="https://github.com/kallevaravas/kvSmoothTransition">View the Project on GitHub <small>kallevaravas/kvSmoothTransition</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kallevaravas/kvSmoothTransition/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kallevaravas/kvSmoothTransition/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kallevaravas/kvSmoothTransition">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="kvsmoothtransition" class="anchor" href="#kvsmoothtransition"><span class="octicon octicon-link"></span></a>kvSmoothTransition</h1>
+
+<p><strong>kvSmoothTransition</strong> plugin is a simple fix for people, who want have smooth hover transitions for their designs and layouts. This plugin works for most possible element types and all possible css types. Very easy to setup and uses only 3 options.</p>
+
+<p>This project originally started from the need to smoothly switch between normal and hovered element. After endless of research, <a href="http://stackoverflow.com/questions/6800950/smooth-transition-between-two-class-and-classhover">SO question</a> was started. It did get some results, but the codes were very minimal or oversized -- nothing dry or neat.</p>
+
+<p>This code is sadly from 2011, and now there are more browser support for these types of things. But hopefully someone can benefit from this script yet.</p>
+
+<p>Original code by Kalle Väravas (16/11/2011)</p>
+
+<p><strong>Copyleft - Use it freely!</strong></p>
+
+<p><strong>Usage</strong></p>
+
+<p>This plugin does not use the :hover pseudo-class, but just the .hover class of the original element. So if your normal hover effect would be .test:hover {} then now you have to set it as .test.hover {} (or #test.hover {}):</p>
+
+<pre><code>&lt;style&gt;
+    #test, .test {padding: 5px;}
+    #test.hover, .test.hover {border: 1px solid grey; -moz-border-radius: 3px; text-decoration: underline;}
+&lt;/style&gt;
+&lt;div id="test"&gt;id test&lt;/div&gt;
+&lt;div class="test"&gt;class test&lt;/div&gt;
+&lt;script&gt;
+    $('#test, .test').kvSmoothTransition();
+&lt;/script&gt;
+</code></pre>
+
+<p>If you still wish to have normal hover effect as fallback when JavaScript is not enabled, then add it to the noscript-stylesheet:</p>
+
+<pre><code>&lt;noscript&gt;
+    &lt;style&gt;
+        #test:hover, .test:hover {border: 1px solid grey; -moz-border-radius: 3px; text-decoration: underline;}
+    &lt;/style&gt;
+&lt;/noscript&gt;
+</code></pre>
+
+<p><strong><a href="http://jsfiddle.net/hobobne/e87q8/12/">Check the example fiddle</a></strong></p>
+
+<p>This plugin has 3 options.</p>
+
+<ul>
+<li>
+<strong>showSpeed:</strong> [number] - easein animation speed</li>
+<li>
+<strong>hideSpeed:</strong> [number] - easeout animation speed</li>
+<li>
+<strong>includeText:</strong> [boolean] - determines if the html from the element will be used</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kallevaravas">kallevaravas</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
