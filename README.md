@@ -15,7 +15,24 @@ Original code by Kalle Väravas (16/11/2011)
 
 This plugin does not use the :hover pseudo-class, but just the .hover class of the original element. So if your normal hover effect would be .test:hover {} then now you have to set it as .test.hover {} (or #test.hover {}):
 
-`$('#test, .test').kvSmoothTransition();`
+    <style>
+    	#test, .test {padding: 5px;}
+    	#test.hover, .test.hover {border: 1px solid grey; -moz-border-radius: 3px; text-decoration: underline;}
+    </style>
+    <div id="test">id test</div>
+    <div class="test">class test</div>
+    <script>
+    	$('#test, .test').kvSmoothTransition();
+    </script>
+
+If you still wish to have normal hover effect as fallback when JavaScript is not enabled, then add it to the noscript-stylesheet:
+
+    <noscript>
+    	<style>
+    		#test:hover, .test:hover {border: 1px solid grey; -moz-border-radius: 3px; text-decoration: underline;}
+    	</style>
+    </noscript>
+
 
 **[Check the example fiddle](http://jsfiddle.net/hobobne/e87q8/12/)**
 
